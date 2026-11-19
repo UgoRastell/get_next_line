@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 18:19:53 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/19 12:56:48 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/19 13:11:48 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@
 # endif
 
 // UTILS
-size_t	ft_strlen(const char *c);
+size_t	ft_new_line(const char *c);
 
 #endif
