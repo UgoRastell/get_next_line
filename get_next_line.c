@@ -6,9 +6,11 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:43 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/18 18:20:28 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/19 12:05:35 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "get_next_line.h"
 
 char	*get_next_line(int fd)
 {
