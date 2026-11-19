@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:38 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/19 12:55:25 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/19 12:58:06 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ size_t	ft_strlen(const char *c)
 {
 	size_t	i;
 
+	i = 0;
 	while (c[i])
 	{
 		i++;
