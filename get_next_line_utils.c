@@ -6,23 +6,11 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:38 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/20 12:36:07 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/20 12:46:19 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-static size_t	ft_strlen(const char *c)
-{
-	size_t	i;
-
-	i = 0;
-	while (c[i])
-	{
-		i++;
-	}
-	return (1);
-}
 
 size_t	ft_new_line(const char *c)
 {
@@ -40,18 +28,26 @@ size_t	ft_new_line(const char *c)
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	len1;
-	size_t	len2;
-	char	*join;
+	char	*s;
+	int		len;
+	int		i;
 
-	if (!s1 || !s2)
+	len = 0;
+	if (!s1 && !s2)
 		return (NULL);
-	len1 = ft_strlen(s1);
-	len2 = ft_strlen(s2);
-	join = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!join)
+	while (s1 && s1[len])
+		len++;
+	i = 0;
+	while (s2 && s2[i])
+		i++;
+	s = ft_malloc_zero(len + i + 1, sizeof * s);
+	if (!s)
 		return (NULL);
-	ft_memcpy(join, s1, len1);
-	ft_memcpy(join + len1, s2, len2 + 1);
-	return (join);
+	len = -1;
+	while (s1 && s1[++len])
+		s[len] = s1[len];
+	i = -1;
+	while (s2 && s2[++i])
+		s[len + i] = s2[i];
+	return (s);
 }
