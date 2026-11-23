@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:43 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 17:18:45 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 17:47:39 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,15 @@ void	ft_read_line(int fd, char **keep, char **tmp)
 			return ;
 		}
 		buf[r] = '\0';
-		*tmp = ft_strdup(*keep);
+		*tmp = ft_strjoin(*keep, buf);
 		ft_free_strs(keep, 0, 0);
-		*keep = ft_strjoin(*tmp, buf);
+		if (*tmp == NULL)
+		{
+			ft_free_strs(buf, 0, 0);
+			return ;
+		}
 		ft_free_strs(tmp, 0, 0);
 	}
-	ft_free_strs(&buf, 0, 0);
 }
 
 char	*ft_parse_line(char **keep, char **tmp)
