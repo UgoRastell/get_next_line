@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:38 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 17:11:58 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 17:34:59 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	len = -1;
 	if (s1 == NULL)
-		len = 1;
+		len = 0;
 	while (s1 && s1[++len])
 		s[len] = s1[len];
 	i = -1;
