@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:43 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 13:19:38 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 16:37:32 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	ft_read_line(int fd, char **keep, char **tmp)
 	if (!buf)
 		return ;
 	r = 1;
-	while (r > 0)
+	while (r > 0 && !ft_new_line(*keep))
 	{
 		r = read(fd, buf, BUFFER_SIZE);
 		if (r == -1)
@@ -87,8 +87,6 @@ void	ft_read_line(int fd, char **keep, char **tmp)
 		ft_free_strs(keep, 0, 0);
 		*keep = ft_strjoin(*tmp, buf);
 		ft_free_strs(tmp, 0, 0);
-		if (ft_new_line(*keep))
-			break ;
 	}
 	ft_free_strs(&buf, 0, 0);
 }

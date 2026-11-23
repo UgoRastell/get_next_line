@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:38 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 12:28:08 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 16:41:23 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ size_t	ft_new_line(const char *c)
 	size_t	i;
 
 	i = 0;
+	if (c == NULL)
+	{
+		return (0);
+	}
 	while (c[i])
 	{
 		if (c[i] == '\n')
