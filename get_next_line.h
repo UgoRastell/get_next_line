@@ -6,15 +6,13 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 18:19:53 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 12:21:01 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 12:33:13 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
-# include <stdbool.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
