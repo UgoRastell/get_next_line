@@ -6,7 +6,7 @@
 /*   By: urastell <urastell@learner.42.tech>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/18 15:41:43 by urastell          #+#    #+#             */
-/*   Updated: 2026/11/23 17:12:10 by urastell         ###   ########.fr       */
+/*   Updated: 2026/11/23 17:18:45 by urastell         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ char	*get_after_newline(const char *s)
 	return (res);
 }
 
-char	*ft_read_line(int fd, char **keep, char **tmp)
+void	ft_read_line(int fd, char **keep, char **tmp)
 {
 	char	*buf;
 	int		r;
@@ -80,7 +80,7 @@ char	*ft_read_line(int fd, char **keep, char **tmp)
 		if (r == -1)
 		{
 			ft_free_strs(&buf, keep, tmp);
-			return (keep);
+			return ;
 		}
 		buf[r] = '\0';
 		*tmp = ft_strdup(*keep);
