@@ -71,38 +71,42 @@ void	ft_read_line(int fd, char **keep, char **tmp)
 	int		r;
 
 	buf = malloc(sizeof * buf * (BUFFER_SIZE + 1));
-	if (!buf)
-		return ;
 	r = 1;
+	if (!buf)
+		r = -1;
 	while (r > 0 && !ft_new_line(*keep))
 	{
 		r = read(fd, buf, BUFFER_SIZE);
 		if (r == -1)
-		{
-			ft_free_strs(&buf, keep, tmp);
-			return ;
-		}
+			break ;
 		buf[r] = '\0';
 		*tmp = ft_strjoin(*keep, buf);
 		ft_free_strs(keep, 0, 0);
 		if (*tmp == NULL)
-		{
-			ft_free_strs(buf, 0, 0);
-			return ;
-		}
-		ft_free_strs(tmp, 0, 0);
+			break ;
+		*keep = *tmp;
+		*tmp = NULL;
 	}
+	if (r == -1)
+		ft_free_strs(keep, 0, 0);
+	free(buf);
 }
 
 char	*ft_parse_line(char **keep, char **tmp)
 {
 	char	*line;
 
-	*tmp = ft_strdup(*keep);
-	ft_free_strs(keep, 0, 0);
+	*tmp = *keep;
 	*keep = get_after_newline(*tmp);
+	if (*keep == NULL)
+	{
+		ft_free_strs(tmp, 0, 0);
+		return (NULL);
+	}
 	line = get_before_newline(*tmp);
 	ft_free_strs(tmp, 0, 0);
+	if (line == NULL)
+		ft_free_strs(keep, 0, 0);
 	return (line);
 }
 
